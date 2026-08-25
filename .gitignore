@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+.next/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE / Agent
+CLAUDE.md
+AGENTS.md
+.claude/
+tsconfig.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db

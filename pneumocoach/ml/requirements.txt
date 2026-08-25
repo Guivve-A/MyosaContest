@@ -1,0 +1,5 @@
+numpy>=1.26
+scipy>=1.13
+scikit-learn>=1.5
+tensorflow>=2.16
+pytest>=8.0

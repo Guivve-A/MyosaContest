@@ -1,0 +1,251 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-verdict-ok: var(--verdict-ok);
+  --color-verdict-warn: var(--verdict-warn);
+  --color-verdict-alert: var(--verdict-alert);
+  --color-verdict-mute: var(--verdict-mute);
+  --color-signal-grid: var(--signal-grid);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* --------------------------------------------------------------------
+     Paleta derivada de la fotografia de referencia (gafas sobre travertino).
+     Cada token apunta a un elemento concreto de esa imagen; no hay colores
+     inventados. El acento es el ambar del lente, la tinta es el azul-violeta
+     profundo de los cuadros oscuros de la montura, y los neutros salen del
+     travertino y del panel izquierdo.
+     -------------------------------------------------------------------- */
+  --background: oklch(0.963 0.005 85);        /* panel izquierdo, gris calido */
+  --foreground: oklch(0.215 0.028 292);       /* cuadro oscuro de la montura */
+  --card: oklch(0.995 0.002 90);              /* blanco de la montura */
+  --card-foreground: oklch(0.215 0.028 292);
+  --popover: oklch(0.995 0.002 90);
+  --popover-foreground: oklch(0.215 0.028 292);
+
+  --primary: oklch(0.612 0.132 63);           /* AMBAR DEL LENTE */
+  --primary-foreground: oklch(0.995 0.002 90);
+
+  --secondary: oklch(0.928 0.014 82);         /* travertino */
+  --secondary-foreground: oklch(0.305 0.026 290);
+  --muted: oklch(0.936 0.011 84);
+  --muted-foreground: oklch(0.522 0.021 76);  /* sombra calida sobre la piedra */
+  --accent: oklch(0.914 0.032 78);            /* dorado del damero, atenuado */
+  --accent-foreground: oklch(0.305 0.026 290);
+  --destructive: oklch(0.512 0.148 34);       /* rojizo de la misma familia */
+
+  --border: oklch(0.888 0.012 82);
+  --input: oklch(0.888 0.012 82);
+  --ring: oklch(0.612 0.132 63);
+
+  /* Series de datos. Ordenadas para que las cuatro clases del modelo tengan
+     separacion perceptual sin salirse de la familia de la imagen. */
+  --chart-1: oklch(0.612 0.132 63);           /* diafragmatica  - ambar */
+  --chart-2: oklch(0.452 0.062 288);          /* toracica       - violeta */
+  --chart-3: oklch(0.512 0.148 34);           /* rapida superf. - rojizo */
+  --chart-4: oklch(0.646 0.018 78);           /* artefacto      - taupe */
+  --chart-5: oklch(0.742 0.108 76);           /* dorado del damero */
+
+  /* Semantica clinica, referenciada por los componentes de veredicto. */
+  --verdict-ok: oklch(0.612 0.132 63);
+  --verdict-warn: oklch(0.452 0.062 288);
+  --verdict-alert: oklch(0.512 0.148 34);
+  --verdict-mute: oklch(0.646 0.018 78);
+  --signal-grid: oklch(0.888 0.012 82);
+  --glow: oklch(0.742 0.108 76 / 0.28);
+
+  --radius: 0.75rem;
+  --sidebar: oklch(0.978 0.004 85);
+  --sidebar-foreground: oklch(0.215 0.028 292);
+  --sidebar-primary: oklch(0.612 0.132 63);
+  --sidebar-primary-foreground: oklch(0.995 0.002 90);
+  --sidebar-accent: oklch(0.928 0.014 82);
+  --sidebar-accent-foreground: oklch(0.305 0.026 290);
+  --sidebar-border: oklch(0.888 0.012 82);
+  --sidebar-ring: oklch(0.612 0.132 63);
+}
+
+.dark {
+  /* El modo oscuro toma el azul-violeta profundo de los cuadros de la montura
+     como fondo, y sube el ambar para que siga leyendo sobre tierra oscura. */
+  --background: oklch(0.178 0.024 292);
+  --foreground: oklch(0.945 0.008 84);
+  --card: oklch(0.222 0.026 291);
+  --card-foreground: oklch(0.945 0.008 84);
+  --popover: oklch(0.222 0.026 291);
+  --popover-foreground: oklch(0.945 0.008 84);
+
+  --primary: oklch(0.752 0.128 68);
+  --primary-foreground: oklch(0.178 0.024 292);
+
+  --secondary: oklch(0.272 0.026 291);
+  --secondary-foreground: oklch(0.945 0.008 84);
+  --muted: oklch(0.268 0.024 291);
+  --muted-foreground: oklch(0.688 0.016 80);
+  --accent: oklch(0.302 0.036 290);
+  --accent-foreground: oklch(0.945 0.008 84);
+  --destructive: oklch(0.638 0.152 34);
+
+  --border: oklch(0.312 0.028 291);
+  --input: oklch(0.312 0.028 291);
+  --ring: oklch(0.752 0.128 68);
+
+  --chart-1: oklch(0.752 0.128 68);
+  --chart-2: oklch(0.672 0.078 291);
+  --chart-3: oklch(0.638 0.152 34);
+  --chart-4: oklch(0.628 0.018 80);
+  --chart-5: oklch(0.812 0.104 78);
+
+  --verdict-ok: oklch(0.752 0.128 68);
+  --verdict-warn: oklch(0.672 0.078 291);
+  --verdict-alert: oklch(0.638 0.152 34);
+  --verdict-mute: oklch(0.628 0.018 80);
+  --signal-grid: oklch(0.312 0.028 291);
+  --glow: oklch(0.812 0.104 78 / 0.22);
+
+  --sidebar: oklch(0.222 0.026 291);
+  --sidebar-foreground: oklch(0.945 0.008 84);
+  --sidebar-primary: oklch(0.752 0.128 68);
+  --sidebar-primary-foreground: oklch(0.178 0.024 292);
+  --sidebar-accent: oklch(0.272 0.026 291);
+  --sidebar-accent-foreground: oklch(0.945 0.008 84);
+  --sidebar-border: oklch(0.312 0.028 291);
+  --sidebar-ring: oklch(0.752 0.128 68);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+
+/* ---------------------------------------------------------------------------
+   Movimiento
+   ---------------------------------------------------------------------------
+   Las animaciones aqui existen para comunicar estado, no para decorar. El orbe
+   respiratorio marca el ritmo que el paciente debe seguir; el barrido de las
+   trazas indica que el flujo BLE esta vivo; la entrada escalonada de tarjetas
+   da orden de lectura. Nada anima "porque si".
+
+   Todo se apaga bajo prefers-reduced-motion: a un paciente con disnea, una
+   interfaz que late puede resultarle molesta o directamente contraproducente.
+   --------------------------------------------------------------------------- */
+
+@keyframes breathe-in {
+  from { transform: scale(0.82); }
+  to   { transform: scale(1.06); }
+}
+@keyframes breathe-out {
+  from { transform: scale(1.06); }
+  to   { transform: scale(0.82); }
+}
+@keyframes halo {
+  0%, 100% { opacity: .18; transform: scale(1); }
+  50%      { opacity: .42; transform: scale(1.14); }
+}
+@keyframes trace-sweep {
+  from { stroke-dashoffset: var(--trace-len, 1200); }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes ping-soft {
+  0%   { opacity: .55; transform: scale(1); }
+  70%  { opacity: 0;   transform: scale(2.4); }
+  100% { opacity: 0;   transform: scale(2.4); }
+}
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position: 200% 0; }
+}
+
+.animate-halo      { animation: halo 4s ease-in-out infinite; }
+.animate-ping-soft { animation: ping-soft 2.4s cubic-bezier(0,0,.2,1) infinite; }
+.animate-rise      { animation: rise .45s cubic-bezier(.16,1,.3,1) both; }
+.animate-trace     { animation: trace-sweep 1.1s cubic-bezier(.4,0,.2,1) both; }
+
+/* Retardos para escalonar la entrada de una rejilla de tarjetas. */
+.stagger-1 { animation-delay: 40ms }
+.stagger-2 { animation-delay: 90ms }
+.stagger-3 { animation-delay: 140ms }
+.stagger-4 { animation-delay: 190ms }
+.stagger-5 { animation-delay: 240ms }
+.stagger-6 { animation-delay: 290ms }
+
+/* Numeros tabulares donde hay cifras que se actualizan en vivo: sin esto, el
+   layout salta cada vez que un 1 pasa a ser un 8. */
+.tnum { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg,
+    transparent 0%, var(--glow) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-halo,
+  .animate-ping-soft,
+  .animate-rise,
+  .animate-trace,
+  .skeleton-shimmer,
+  [data-breath-orb] {
+    animation: none !important;
+    transition: none !important;
+  }
+  .animate-rise { opacity: 1; transform: none; }
+}

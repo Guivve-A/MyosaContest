@@ -1,0 +1,35 @@
+{
+  "fuente": "grabaciones reales, 4 sesiones de s01",
+  "binaria_cruzando_protocolos": 0.75,
+  "ic95": [
+    0.6474170858641515,
+    0.8348681929727662
+  ],
+  "p": 4.290279933524806e-06,
+  "n_efectivo": 80.0,
+  "por_grupo": {
+    "esfuerzo": {
+      "binaria": 0.85,
+      "n": 80,
+      "clases_entrenadas": [
+        "diaphragmatic",
+        "rapid_shallow",
+        "thoracic"
+      ],
+      "completa": 0.85,
+      "fuera_de_binaria": 0.0
+    },
+    "protocolo": {
+      "binaria": 0.7166666666666667,
+      "n": 240,
+      "clases_entrenadas": [
+        "diaphragmatic",
+        "thoracic"
+      ],
+      "completa": 0.5850340136054422,
+      "fuera_de_binaria": 0.0
+    }
+  },
+  "n_ventanas_entrenamiento": 374,
+  "bytes_modelo": 5448
+}
