@@ -74,6 +74,30 @@ The original design rested on a mechanical hypothesis: that thoracic breathing r
   <i>Top view of both enclosure variants, showing the cable gland on the capsule and the magnet pocket layout on the base.</i>
 </p>
 
+
+### **Enclosure — CAD Renders**
+
+<p align="center">
+  <img src="enclosure-hero.png" width="800"><br/>
+  <em>Complete enclosure assembly — custom 3D-printable housing for the MYOSA board.</em>
+</p>
+
+<p align="center">
+  <img src="enclosure-exploded.png" width="800"><br/>
+  <em>Exploded view showing box, lid, and internal layout.</em>
+</p>
+
+<table>
+  <tr>
+    <td align="center"><img src="enclosure-box-iso.png" width="380"><br/><em>Box — isometric</em></td>
+    <td align="center"><img src="enclosure-lid-iso.png" width="380"><br/><em>Lid — isometric</em></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="enclosure-box-inside.png" width="380"><br/><em>Box — internal cavity</em></td>
+    <td align="center"><img src="enclosure-corner.png" width="380"><br/><em>Corner detail</em></td>
+  </tr>
+</table>
+
 ### **Videos**
 
 <video controls width="100%">

@@ -51,6 +51,45 @@ The original design rested on a mechanical hypothesis that we **falsified with o
 
 ---
 
+
+
+## 📦 Enclosure Design
+
+Custom 3D-printable enclosure designed in Autodesk Inventor, optimized for the MYOSA board form factor.
+
+<p align="center">
+  <img src="pneumocoach/enclosure-hero.png" width="720"><br/>
+  <em>Hero view — complete enclosure assembly with lid.</em>
+</p>
+
+<p align="center">
+  <img src="pneumocoach/enclosure-exploded.png" width="720"><br/>
+  <em>Exploded view — box, lid, and internal layout for the MYOSA board.</em>
+</p>
+
+<table>
+  <tr>
+    <td align="center"><img src="pneumocoach/enclosure-box-iso.png" width="360"><br/><em>Box — isometric</em></td>
+    <td align="center"><img src="pneumocoach/enclosure-lid-iso.png" width="360"><br/><em>Lid — isometric</em></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="pneumocoach/enclosure-box-inside.png" width="360"><br/><em>Box — internal cavity</em></td>
+    <td align="center"><img src="pneumocoach/enclosure-corner.png" width="360"><br/><em>Corner detail</em></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="pneumocoach/enclosure-box-top.png" width="360"><br/><em>Box — top view</em></td>
+    <td align="center"><img src="pneumocoach/enclosure-lid-top.png" width="360"><br/><em>Lid — top view</em></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="pneumocoach/enclosure-front.png" width="360"><br/><em>Front profile</em></td>
+    <td align="center"><img src="pneumocoach/enclosure-top.png" width="360"><br/><em>Top profile</em></td>
+  </tr>
+</table>
+
+> 👉 Interactive 3D showcase available in [`pneumocoach/enclosure-showcase.html`](pneumocoach/enclosure-showcase.html) — download and open locally.
+
+---
+
 ## 📊 Validated Results
 
 | Tested on | Binary accuracy | 95% CI | n (effective) |
