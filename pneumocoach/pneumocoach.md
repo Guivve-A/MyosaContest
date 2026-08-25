@@ -1,4 +1,4 @@
-# PneumoCoach ? Edge-AI Breathing Technique Coach
+# PneumoCoach — Edge-AI Breathing Technique Coach
 
 A wearable that coaches breathing technique from a single IMU on the sternum, with an 8-bit neural network running entirely on the ESP32. Includes an honest account of the premise we falsified with our own hardware.
 
